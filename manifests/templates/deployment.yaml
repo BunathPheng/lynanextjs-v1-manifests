@@ -1,0 +1,24 @@
+---
+# Source: helm for kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lynanextjs-v1
+  labels:
+    app: lynanextjs-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lynanextjs-v1
+  template:
+    metadata:
+      labels:
+        app: lynanextjs-v1
+    spec:
+      containers:
+        - name: lynanextjs-v1
+          image: docker.io/phengbunath/lynanextjs-v1:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
